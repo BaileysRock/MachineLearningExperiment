@@ -45,5 +45,5 @@ def GradientDescent(X,X_train,y,exponent,alpha,iterNum,Lambda,precision):
     plt.plot(X, Y_predict,format('c'),label='Gradient Descent')
     drawSin2pix(1000)
     plt.legend()
-    # plt.savefig("./" + "picture/GradientDescent/" + title+".png")
+    plt.savefig("./" + "picture/GradientDescent/" + title+".png")
     plt.show()

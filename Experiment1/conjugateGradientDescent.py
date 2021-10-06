@@ -38,5 +38,5 @@ def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precisi
     plt.plot(X, Y_predict, format('c'), label='Conjugate Gradient Descent')
     drawSin2pix(1000)
     plt.legend()
-    # plt.savefig("./" + "picture/ConjugateGradientDescent/" + title)
+    plt.savefig("./" + "picture/ConjugateGradientDescent/" + title)
     plt.show()
