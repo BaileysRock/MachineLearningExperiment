@@ -34,7 +34,7 @@ def GradientDescent(X,X_train,y,exponent,alpha,iterNum,Lambda,precision):
     # Y_predict = np.matmul(X_train, theta)
     # plt.plot(X, Y_predict, format('y'),label = 'Gradient Descent')
 
-    title = 'exponent={} numbers={} alpha={}'.format(exponent,X.shape[0],alpha)
+    title = 'exponent={} numbers={} alpha={} lambda={}'.format(exponent,X.shape[0],alpha,Lambda)
     plt.title(title)
     plt.xlabel('$X$', fontsize=10)
     plt.ylabel('$y$', fontsize=10)
@@ -45,5 +45,5 @@ def GradientDescent(X,X_train,y,exponent,alpha,iterNum,Lambda,precision):
     plt.plot(X, Y_predict,format('c'),label='Gradient Descent')
     drawSin2pix(1000)
     plt.legend()
-    plt.savefig("./" + "picture/GradientDescent/" + title+".png")
+    # plt.savefig("./" + "picture/GradientDescent/" + title+".png")
     plt.show()

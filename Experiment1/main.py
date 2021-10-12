@@ -7,9 +7,9 @@ if __name__ == '__main__':
     # 训练样本个数
     numbers = 100
     # 噪声Sigma
-    Sigma = 0.3
+    Sigma = 0.5
     # 多项式的阶数
-    exponent = 51
+    exponent = 101
     # 惩罚系数Lambda
     Lambda = 1e-7
     # 梯度下降学习率
@@ -26,9 +26,10 @@ if __name__ == '__main__':
     fittingNoRegular(X, X_train, y_noise, exponent)
     fittingRegular(X, X_train, y_noise, exponent, Lambda)
     # Drawlambda(X, X_train, y_noise, exponent)
-    ConjugateGradientDescent(X, X_train, y_noise, exponent, CGiterNum, Lambda, precision)
-    GradientDescent(X, X_train, y_noise, exponent, alpha, GDiterNum, Lambda, precision)
-
+    # ConjugateGradientDescent(X, X_train, y_noise, exponent, CGiterNum, Lambda, precision)
+    # GradientDescent(X, X_train, y_noise, exponent, alpha, GDiterNum, Lambda, precision)
+    # ConjugateGradientDescent(X, X_train, y_noise, exponent, CGiterNum, 0, precision)
+    # GradientDescent(X, X_train, y_noise, exponent, alpha, GDiterNum, 0, precision)
 
 
 # def model(numbers):

@@ -27,7 +27,7 @@ def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precisi
         Pk = rkadd1+beta*Pk
         rk = rkadd1
 
-    title = 'exponent={} numbers={}'.format(exponent,X.shape[0])
+    title = 'exponent={} numbers={} lambda={}'.format(exponent,X.shape[0],Lambda)
     plt.title(title)
     plt.xlabel('$X$', fontsize=10)
     plt.ylabel('$y$', fontsize=10)
@@ -38,5 +38,5 @@ def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precisi
     plt.plot(X, Y_predict, format('c'), label='Conjugate Gradient Descent')
     drawSin2pix(1000)
     plt.legend()
-    plt.savefig("./" + "picture/ConjugateGradientDescent/" + title)
+    # plt.savefig("./" + "picture/ConjugateGradientDescent/" + title)
     plt.show()
