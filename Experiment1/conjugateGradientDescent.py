@@ -2,6 +2,7 @@ import numpy as np
 from generateData import generatePlotdata
 import matplotlib.pyplot as plt
 from drawSin2pix import drawSin2pix
+from computeCost import *
 def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precision):
     A = np.dot(np.transpose(X_train), X_train) + np.eye(exponent) * Lambda
     b = np.dot(np.transpose(X_train), y)
@@ -27,6 +28,8 @@ def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precisi
         Pk = rkadd1+beta*Pk
         rk = rkadd1
 
+    loss = ComputeCost(X_train, np.reshape(y,(-1,1)), np.transpose(Wk), 0)[0][0]
+    print("loss = {}".format(loss))
     title = 'exponent={} numbers={} lambda={}'.format(exponent,X.shape[0],Lambda)
     plt.title(title)
     plt.xlabel('$X$', fontsize=10)
@@ -35,6 +38,9 @@ def ConjugateGradientDescent(X, X_train, y, exponent, CGiterNum, Lambda, precisi
     # numbers为绘图的点数
     X, X_train = generatePlotdata(numbers=1000, exponent=exponent)
     Y_predict = np.matmul(X_train, Wk)
+
+
+
     plt.plot(X, Y_predict, format('c'), label='Conjugate Gradient Descent')
     drawSin2pix(1000)
     plt.legend()

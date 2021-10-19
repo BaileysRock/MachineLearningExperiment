@@ -28,6 +28,8 @@ def GradientDescent(X,X_train,y,exponent,alpha,iterNum,Lambda,precision):
             print("当前迭代的alpha={}".format(alpha))
     Y_predict = np.matmul(X_train, theta)
     # plt.plot(X, Y_predict,format('y'))
+    loss = ComputeCost(X_train, np.reshape(y,(-1,1)), np.transpose(theta), 0)[0][0]
+    print("loss = {}".format(loss))
 
     # # numbers为绘图的点数
     # X,X_train = generatePlotdata(numbers=100,exponent=exponent)
